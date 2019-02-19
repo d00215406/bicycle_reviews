@@ -10,7 +10,7 @@
 
         <label>Category ID:</label>
         <input type="category_id" name="category_id"
-               value="<?php echo $product['categoryID']; ?>">
+               value="<?php echo $product['typeID']; ?>">
         <br>
 
         <label>Code:</label>

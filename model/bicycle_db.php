@@ -13,7 +13,7 @@ function get_products() {
 function get_products_by_category($category_id) {
     global $db;
     $query = 'SELECT * FROM bicycles
-              WHERE bicycles.categoryID = :category_id
+              WHERE bicycles.typeID = :category_id
               ORDER BY bicycleID';
     $statement = $db->prepare($query);
     $statement->bindValue(":category_id", $category_id);
@@ -48,7 +48,7 @@ function delete_product($product_id) {
 function add_product($category_id, $code, $name, $price) {
     global $db;
     $query = 'INSERT INTO bicycles
-                 (categoryID, bicycleCode, bicycleName, listPrice)
+                 (typeID, bicycleCode, bicycleName, listPrice)
               VALUES
                  (:category_id, :code, :name, :price)';
     $statement = $db->prepare($query);
@@ -63,7 +63,7 @@ function add_product($category_id, $code, $name, $price) {
 function update_product($product_id, $category_id, $code, $name, $price) {
     global $db;
     $query = 'UPDATE bicycles
-              SET categoryID = :category_id,
+              SET typeID = :category_id,
                   bicycleCode = :code,
                   bicycleName = :name,
                   listPrice = :price

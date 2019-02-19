@@ -9,13 +9,13 @@
         </tr>
         <?php foreach ($categories as $category) : ?>
         <tr>
-            <td><?php echo $category['categoryName']; ?></td>
+            <td><?php echo $category['typeName']; ?></td>
             <td>
                 <form id="delete_product_form"
                       action="index.php" method="post">
                     <input type="hidden" name="action" value="delete_category">
                     <input type="hidden" name="category_id"
-                           value="<?php echo $category['categoryID']; ?>">
+                           value="<?php echo $category['typeID']; ?>">
                     <input type="submit" value="Delete">
                 </form>
             </td>

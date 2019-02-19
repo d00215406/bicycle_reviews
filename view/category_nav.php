@@ -5,8 +5,8 @@
                 <?php foreach($categories as $category) : ?>
                 <li>
                     <a href="?category_id=<?php 
-                              echo $category['categoryID']; ?>">
-                        <?php echo $category['categoryName']; ?>
+                              echo $category['typeID']; ?>">
+                        <?php echo $category['typeName']; ?>
                     </a>
                 </li>
                 <?php endforeach; ?>
