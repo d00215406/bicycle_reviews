@@ -1,7 +1,7 @@
 <?php
 require('../model/database.php');
-require('../model/product_db.php');
-require('../model/category_db.php');
+require('../model/bicycle_db.php');
+require('../model/type_db.php');
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
@@ -25,7 +25,7 @@ if ($action == 'list_products') {
     $products = get_products_by_category($category_id);
 
     // Display the product list
-    include('product_list.php');
+    include('bicycle_list.php');
 } else if ($action == 'show_edit_form') {
     $product_id = filter_input(INPUT_POST, 'product_id', 
             FILTER_VALIDATE_INT);
@@ -34,7 +34,7 @@ if ($action == 'list_products') {
         include('../errors/error.php');
     } else { 
         $product = get_product($product_id);
-        include('product_edit.php');
+        include('bicycle_edit.php');
     }
 } else if ($action == 'update_product') {
     $product_id = filter_input(INPUT_POST, 'product_id', 
@@ -72,7 +72,7 @@ if ($action == 'list_products') {
     }
 } else if ($action == 'show_add_form') {
     $categories = get_categories();
-    include('product_add.php');
+    include('bicycle_add.php');
 } else if ($action == 'add_product') {
     $category_id = filter_input(INPUT_POST, 'category_id', 
             FILTER_VALIDATE_INT);
@@ -89,7 +89,7 @@ if ($action == 'list_products') {
     }
 } else if ($action == 'list_categories') {
     $categories = get_categories();
-    include('category_list.php');
+    include('type_list.php');
 } else if ($action == 'add_category') {
     $name = filter_input(INPUT_POST, 'name');
 

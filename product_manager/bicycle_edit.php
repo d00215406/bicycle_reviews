@@ -6,7 +6,7 @@
         <input type="hidden" name="action" value="update_product">
 
         <input type="hidden" name="product_id"
-               value="<?php echo $product['productID']; ?>">
+               value="<?php echo $product['bicycleID']; ?>">
 
         <label>Category ID:</label>
         <input type="category_id" name="category_id"
@@ -15,12 +15,12 @@
 
         <label>Code:</label>
         <input type="input" name="code"
-               value="<?php echo $product['productCode']; ?>">
+               value="<?php echo $product['bicycleCode']; ?>">
         <br>
 
         <label>Name:</label>
         <input type="input" name="name"
-               value="<?php echo $product['productName']; ?>">
+               value="<?php echo $product['bicycleName']; ?>">
         <br>
 
         <label>List Price:</label>

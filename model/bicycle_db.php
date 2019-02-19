@@ -2,7 +2,7 @@
 function get_products() {
     global $db;
     $query = 'SELECT * FROM bicycles
-              ORDER BY productID';
+              ORDER BY bicycleID';
     $statement = $db->prepare($query);
     $statement->execute();
     $products = $statement->fetchAll();
@@ -14,7 +14,7 @@ function get_products_by_category($category_id) {
     global $db;
     $query = 'SELECT * FROM bicycles
               WHERE bicycles.categoryID = :category_id
-              ORDER BY productID';
+              ORDER BY bicycleID';
     $statement = $db->prepare($query);
     $statement->bindValue(":category_id", $category_id);
     $statement->execute();
@@ -26,7 +26,7 @@ function get_products_by_category($category_id) {
 function get_product($product_id) {
     global $db;
     $query = 'SELECT * FROM bicycles
-              WHERE productID = :product_id';
+              WHERE bicycleID = :product_id';
     $statement = $db->prepare($query);
     $statement->bindValue(":product_id", $product_id);
     $statement->execute();
@@ -38,7 +38,7 @@ function get_product($product_id) {
 function delete_product($product_id) {
     global $db;
     $query = 'DELETE FROM bicycles
-              WHERE productID = :product_id';
+              WHERE bicycleID = :product_id';
     $statement = $db->prepare($query);
     $statement->bindValue(':product_id', $product_id);
     $statement->execute();
@@ -48,7 +48,7 @@ function delete_product($product_id) {
 function add_product($category_id, $code, $name, $price) {
     global $db;
     $query = 'INSERT INTO bicycles
-                 (categoryID, productCode, productName, listPrice)
+                 (categoryID, bicycleCode, bicycleName, listPrice)
               VALUES
                  (:category_id, :code, :name, :price)';
     $statement = $db->prepare($query);
@@ -64,10 +64,10 @@ function update_product($product_id, $category_id, $code, $name, $price) {
     global $db;
     $query = 'UPDATE bicycles
               SET categoryID = :category_id,
-                  productCode = :code,
-                  productName = :name,
+                  bicycleCode = :code,
+                  bicycleName = :name,
                   listPrice = :price
-               WHERE productID = :product_id';
+               WHERE bicycleID = :product_id';
     $statement = $db->prepare($query);
     $statement->bindValue(':category_id', $category_id);
     $statement->bindValue(':code', $code);

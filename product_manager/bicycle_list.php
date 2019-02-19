@@ -22,14 +22,14 @@
             </tr>
             <?php foreach ($products as $product) : ?>
             <tr>
-                <td><?php echo $product['productCode']; ?></td>
-                <td><?php echo $product['productName']; ?></td>
+                <td><?php echo $product['bicycleCode']; ?></td>
+                <td><?php echo $product['bicycleName']; ?></td>
                 <td class="right"><?php echo $product['listPrice']; ?></td>
                 <td><form action="." method="post">
                     <input type="hidden" name="action"
                            value="show_edit_form">
                     <input type="hidden" name="product_id"
-                           value="<?php echo $product['productID']; ?>">
+                           value="<?php echo $product['bicycleID']; ?>">
                     <input type="hidden" name="category_id"
                            value="<?php echo $product['categoryID']; ?>">
                     <input type="submit" value="Edit">
@@ -38,7 +38,7 @@
                     <input type="hidden" name="action"
                            value="delete_product">
                     <input type="hidden" name="product_id"
-                           value="<?php echo $product['productID']; ?>">
+                           value="<?php echo $product['bicycleID']; ?>">
                     <input type="hidden" name="category_id"
                            value="<?php echo $product['categoryID']; ?>">
                     <input type="submit" value="Delete">
