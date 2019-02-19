@@ -1,7 +1,7 @@
 <?php
 function get_products() {
     global $db;
-    $query = 'SELECT * FROM products
+    $query = 'SELECT * FROM bicycles
               ORDER BY productID';
     $statement = $db->prepare($query);
     $statement->execute();
@@ -12,8 +12,8 @@ function get_products() {
 
 function get_products_by_category($category_id) {
     global $db;
-    $query = 'SELECT * FROM products
-              WHERE products.categoryID = :category_id
+    $query = 'SELECT * FROM bicycles
+              WHERE bicycles.categoryID = :category_id
               ORDER BY productID';
     $statement = $db->prepare($query);
     $statement->bindValue(":category_id", $category_id);
@@ -25,7 +25,7 @@ function get_products_by_category($category_id) {
 
 function get_product($product_id) {
     global $db;
-    $query = 'SELECT * FROM products
+    $query = 'SELECT * FROM bicycles
               WHERE productID = :product_id';
     $statement = $db->prepare($query);
     $statement->bindValue(":product_id", $product_id);
@@ -37,7 +37,7 @@ function get_product($product_id) {
 
 function delete_product($product_id) {
     global $db;
-    $query = 'DELETE FROM products
+    $query = 'DELETE FROM bicycles
               WHERE productID = :product_id';
     $statement = $db->prepare($query);
     $statement->bindValue(':product_id', $product_id);
@@ -47,7 +47,7 @@ function delete_product($product_id) {
 
 function add_product($category_id, $code, $name, $price) {
     global $db;
-    $query = 'INSERT INTO products
+    $query = 'INSERT INTO bicycles
                  (categoryID, productCode, productName, listPrice)
               VALUES
                  (:category_id, :code, :name, :price)';
@@ -62,7 +62,7 @@ function add_product($category_id, $code, $name, $price) {
 
 function update_product($product_id, $category_id, $code, $name, $price) {
     global $db;
-    $query = 'UPDATE products
+    $query = 'UPDATE bicycles
               SET categoryID = :category_id,
                   productCode = :code,
                   productName = :name,
