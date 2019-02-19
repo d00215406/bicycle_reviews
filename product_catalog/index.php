@@ -7,11 +7,11 @@ $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
     $action = filter_input(INPUT_GET, 'action');
     if ($action == NULL) {
-        $action = 'list_bicycles';
+        $action = 'list_products';
     }
 } 
 
-if ($action == 'list_bicycles') {
+if ($action == 'list_products') {
     $category_id = filter_input(INPUT_GET, 'category_id', 
             FILTER_VALIDATE_INT);
     if ($category_id == NULL || $category_id == FALSE) {
@@ -19,7 +19,7 @@ if ($action == 'list_bicycles') {
     }
     $categories = get_categories();
     $category_name = get_category_name($category_id);
-    $bicycles = get_bicycles_by_category($category_id);
+    $products = get_products_by_category($category_id);
 
     include('product_list.php');
 } else if ($action == 'view_product') {

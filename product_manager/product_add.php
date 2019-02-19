@@ -31,7 +31,7 @@
         <br>
     </form>
     <p class="last_paragraph">
-        <a href="index.php?action=list_bicycles">View Product List</a>
+        <a href="index.php?action=list_products">View Product List</a>
     </p>
 
 </main>

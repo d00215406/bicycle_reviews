@@ -7,11 +7,11 @@ $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
     $action = filter_input(INPUT_GET, 'action');
     if ($action == NULL) {
-        $action = 'list_bicycles';
+        $action = 'list_products';
     }
 }
 
-if ($action == 'list_bicycles') {
+if ($action == 'list_products') {
     // Get the current category ID
     $category_id = filter_input(INPUT_GET, 'category_id', 
             FILTER_VALIDATE_INT);
@@ -22,7 +22,7 @@ if ($action == 'list_bicycles') {
     // Get product and category data
     $category_name = get_category_name($category_id);
     $categories = get_categories();
-    $bicycles = get_bicycles_by_category($category_id);
+    $products = get_products_by_category($category_id);
 
     // Display the product list
     include('product_list.php');

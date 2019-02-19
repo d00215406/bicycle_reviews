@@ -10,7 +10,7 @@
     </aside>
 
     <section>
-        <!-- display a table of bicycles -->
+        <!-- display a table of products -->
         <h2><?php echo $category_name; ?></h2>
         <table>
             <tr>
@@ -20,7 +20,7 @@
                 <th>&nbsp;</th>
                 <th>&nbsp;</th>
             </tr>
-            <?php foreach ($bicycles as $product) : ?>
+            <?php foreach ($products as $product) : ?>
             <tr>
                 <td><?php echo $product['productCode']; ?></td>
                 <td><?php echo $product['productName']; ?></td>

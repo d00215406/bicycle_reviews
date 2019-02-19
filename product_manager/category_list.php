@@ -34,7 +34,7 @@
         <input type="submit" value="Add">
     </form>
 
-    <p><a href="index.php?action=list_bicycles">List bicycles</a></p>
+    <p><a href="index.php?action=list_products">List Products</a></p>
 
 </main>
 <?php include '../view/footer.php'; ?>

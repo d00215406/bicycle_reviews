@@ -8,8 +8,8 @@
     <section>
         <h1><?php echo $category_name; ?></h1>
         <ul class="nav">
-            <!-- display links for bicycles in selected category -->
-            <?php foreach ($bicycles as $product) : ?>
+            <!-- display links for products in selected category -->
+            <?php foreach ($products as $product) : ?>
             <li>
                 <a href="?action=view_product&amp;product_id=<?php 
                           echo $product['productID']; ?>">
