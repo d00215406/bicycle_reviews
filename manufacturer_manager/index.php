@@ -33,6 +33,10 @@ if ($action == 'list_manufacturer') {
     $manufacturers = get_manufacturers();
     include('manufacturer_add.php');
  }
+ if ($action == 'show_edit_manufacturer') {
+    $manufacturers = get_manufacturers();
+    include('manufacturer_edit.php');
+ }
 
 
 
@@ -46,6 +50,7 @@ if ($action == 'add_manufacturer') {
 }
 
 if ($action == 'edit_manufacturer') {
+    
     $manufacturer_id = filter_input(INPUT_POST, 'manufacturerID');
     $name = filter_input(INPUT_POST, 'name');
     $site = filter_input(INPUT_POST, 'site');
