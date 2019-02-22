@@ -2,7 +2,7 @@
 <main>
     <h1>Add Manufacturer</h1>
     <form action="index.php" method="post" id="add_manufacturer_form">
-        <input type="hidden" name="action" value="add_product">
+        <input type="hidden" name="action" value="add_manufacturer">
 
         <label>Code:</label>
         <input type="input" name="name">
