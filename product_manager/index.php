@@ -107,4 +107,5 @@ if ($action == 'list_products') {
     delete_category($category_id);
     header('Location: .?action=list_categories');      // display the Category List page
 }
+
 ?>
