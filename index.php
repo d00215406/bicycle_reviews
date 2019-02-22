@@ -6,6 +6,10 @@
         <li>
             <a href="product_manager"><button>Product Manager</button></a>
         </li>
+        <li>
+            <a href="manufacturer_manager"><button>Manufacturer Manager</button></a>
+        </li>
+      
     </ul>
 </main>
 <?php include 'view/footer.php'; ?>

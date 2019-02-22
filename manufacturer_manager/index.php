@@ -1,7 +1,7 @@
 
 
 <?php
-
+require('../model/database.php');
 require('../model/manufacturer_db.php');
 
 // // Display the product list
@@ -28,5 +28,5 @@ $name = filter_input(INPUT_POST, 'name');
 $site = filter_input(INPUT_POST, 'site');
 
 
-add_mnaufacturer($name, $site);
+add_manufacturer($name, $site);
 ?>
