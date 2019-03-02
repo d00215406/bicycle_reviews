@@ -10,13 +10,13 @@ function get_products() {
     return $products;
 }
 
-function get_products_by_category($category_id) {
+function get_products_by_category($type_id) {
     global $db;
     $query = 'SELECT * FROM bicycles
               WHERE bicycles.typeID = :category_id
               ORDER BY bicycleID';
     $statement = $db->prepare($query);
-    $statement->bindValue(":category_id", $category_id);
+    $statement->bindValue(":category_id", $type_id);
     $statement->execute();
     $products = $statement->fetchAll();
     $statement->closeCursor();
@@ -45,14 +45,14 @@ function delete_product($product_id) {
     $statement->closeCursor();
 }
 
-function add_product($category_id, $code, $name, $price) {
+function add_product($type_id, $code, $name, $price) {
     global $db;
     $query = 'INSERT INTO bicycles
                  (typeID, bicycleCode, bicycleName, listPrice)
               VALUES
                  (:category_id, :code, :name, :price)';
     $statement = $db->prepare($query);
-    $statement->bindValue(':category_id', $category_id);
+    $statement->bindValue(':category_id', $type_id);
     $statement->bindValue(':code', $code);
     $statement->bindValue(':name', $name);
     $statement->bindValue(':price', $price);
@@ -60,7 +60,7 @@ function add_product($category_id, $code, $name, $price) {
     $statement->closeCursor();
 }
 
-function update_product($product_id, $category_id, $code, $name, $price) {
+function update_product($product_id, $type_id, $code, $name, $price) {
     global $db;
     $query = 'UPDATE bicycles
               SET typeID = :category_id,
@@ -69,7 +69,7 @@ function update_product($product_id, $category_id, $code, $name, $price) {
                   listPrice = :price
                WHERE bicycleID = :product_id';
     $statement = $db->prepare($query);
-    $statement->bindValue(':category_id', $category_id);
+    $statement->bindValue(':category_id', $type_id);
     $statement->bindValue(':code', $code);
     $statement->bindValue(':name', $name);
     $statement->bindValue(':price', $price);

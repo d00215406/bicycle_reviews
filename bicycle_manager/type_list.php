@@ -7,15 +7,15 @@
             <th>Name</th>
             <th>&nbsp;</th>
         </tr>
-        <?php foreach ($categories as $category) : ?>
+        <?php foreach ($types as $type) : ?>
         <tr>
-            <td><?php echo $category['typeName']; ?></td>
+            <td><?php echo $type['typeName']; ?></td>
             <td>
                 <form id="delete_product_form"
                       action="index.php" method="post">
                     <input type="hidden" name="action" value="delete_category">
                     <input type="hidden" name="category_id"
-                           value="<?php echo $category['typeID']; ?>">
+                           value="<?php echo $type['typeID']; ?>">
                     <input type="submit" value="Delete">
                 </form>
             </td>

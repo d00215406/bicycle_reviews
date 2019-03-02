@@ -8,17 +8,17 @@ function get_categories() {
     return $statement; 
 }
 
-function get_category_name($category_id) {
+function get_category_name($type_id) {
     global $db;
     $query = 'SELECT * FROM types
               WHERE typeID = :category_id';    
     $statement = $db->prepare($query);
-    $statement->bindValue(':category_id', $category_id);
+    $statement->bindValue(':category_id', $type_id);
     $statement->execute();    
-    $category = $statement->fetch();
+    $type = $statement->fetch();
     $statement->closeCursor();    
-    $category_name = $category['typeName'];
-    return $category_name;
+    $type_name = $type['typeName'];
+    return $type_name;
 }
 
 function add_category($name) {
@@ -31,12 +31,12 @@ function add_category($name) {
     $statement->closeCursor();    
 }
 
-function delete_category($category_id) {
+function delete_category($type_id) {
     global $db;
     $query = 'DELETE FROM types
               WHERE typeID = :category_id';
     $statement = $db->prepare($query);
-    $statement->bindValue(':category_id', $category_id);
+    $statement->bindValue(':category_id', $type_id);
     $statement->execute();
     $statement->closeCursor();
 }

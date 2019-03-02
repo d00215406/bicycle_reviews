@@ -10,6 +10,7 @@
                 <th>Name</th>
                 <th>Site</th>
                 <th>&nbsp;</th>
+                <th>&nbsp;</th>
 
             </tr>
             <?php foreach ($manufacturers as $manufacturer) : ?>
@@ -19,9 +20,16 @@
                 <td><form action="." method="post">
                     <input type="hidden" name="action"
                            value="show_edit_form">
-                    <input type="hidden" name="product_id"
+                    <input type="hidden" name="manufacturer_id"
                            value="<?php echo $manufacturer['manufacturerID']; ?>">
                     <input type="submit" value="Edit">
+                </form></td>
+                  <td><form action="." method="post">
+                    <input type="hidden" name="action"
+                           value="delete_manufacturer">
+                    <input type="hidden" name="manufacturer_id"
+                           value="<?php echo $manufacturer['manufacturerID']; ?>">
+                    <input type="submit" value="Delete">
                 </form></td>
             </tr>
             <?php endforeach; ?>

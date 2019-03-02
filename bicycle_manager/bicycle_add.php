@@ -6,9 +6,9 @@
 
         <label>Category:</label>
         <select name="category_id">
-        <?php foreach ( $categories as $category ) : ?>
-            <option value="<?php echo $category['typeID']; ?>">
-                <?php echo $category['typeName']; ?>
+        <?php foreach ( $types as $type ) : ?>
+            <option value="<?php echo $type['typeID']; ?>">
+                <?php echo $type['typeName']; ?>
             </option>
         <?php endforeach; ?>
         </select>

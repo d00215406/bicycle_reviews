@@ -2,11 +2,11 @@
         <nav>
             <ul>
                 <!-- display links for all categories -->
-                <?php foreach($categories as $category) : ?>
+                <?php foreach($types as $type) : ?>
                 <li>
                     <a href="?category_id=<?php 
-                              echo $category['typeID']; ?>">
-                        <?php echo $category['typeName']; ?>
+                              echo $type['typeID']; ?>">
+                        <?php echo $type['typeName']; ?>
                     </a>
                 </li>
                 <?php endforeach; ?>

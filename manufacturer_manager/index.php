@@ -33,10 +33,30 @@ if ($action == 'list_manufacturer') {
     $manufacturers = get_manufacturers();
     include('manufacturer_add.php');
  }
- if ($action == 'show_edit_manufacturer') {
-    $manufacturers = get_manufacturers();
-    include('manufacturer_edit.php');
+ else if ($action == 'show_edit_manufacturer') {
+    $manufacturer_id = filter_input(INPUT_POST, 'manufacturer_id', FILTER_VALIDATE_INT);
+    if ($manufacturer_id == NULL || $manufacturer_id == FALSE)
+    {
+        $error = "Missing or incorrect army id.";
+        include('../errors/error.php');
+    }
+    else
+    {
+        $manufacturer = get_manufacturers($manufacturer_id);
+        include('manufacturer_edit.php');
+    }
  }
+ 
+   if ($action == 'delete_manufacturer') {
+    $manufacturer_id = filter_input(INPUT_POST, 'manufacturer_id', 
+            FILTER_VALIDATE_INT);
+   }
+    if ($manufacturer_id == NULL || $manufacturer_id == FALSE) {
+        $error = "Missing or incorrect product id or category id.";
+        include('../errors/error.php');
+    } else { 
+        delete_manufacturer($manufacturer_id);
+    }
 
 
 
@@ -51,10 +71,37 @@ if ($action == 'add_manufacturer') {
 
 if ($action == 'edit_manufacturer') {
     
-    $manufacturer_id = filter_input(INPUT_POST, 'manufacturerID');
+    $manufacturer_id = filter_input(INPUT_POST, 'manufacturer_id', FILTER_VALIDATE_INT);
     $name = filter_input(INPUT_POST, 'name');
     $site = filter_input(INPUT_POST, 'site');
 
-    update_product($manufacturer_id, $name, $site);
+    // Validate the inputs
+    if ($manufacturer_id == NULL || $manufacturer_id == FALSE || $name == NULL || $site == NULL)
+    {
+        $error = "Invalid army data. Check all fields and try again.";
+        include('../errors/error.php');
+    }
+    else
+    {
+        update_manufacturer($manufacturer_id, $name, $site);
+
+        // Display the member List page for the current role
+        header("Location: .?manufacturer_id=$manufacturer_id");
+    }
+    
+   
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 ?>

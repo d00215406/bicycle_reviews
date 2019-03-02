@@ -1,4 +1,6 @@
 <?php
+
+// Get Manufacturers By Name
 function get_manufacturer_name($manufacturer_id) {
     global $db;
     $query = 'SELECT * FROM manufacturers
@@ -12,20 +14,7 @@ function get_manufacturer_name($manufacturer_id) {
     return $manufacturer_name;
 }
 
-//still not working
-//function get_manufacturer($product_id) {
-//    global $db;
-//    $query = 'SELECT * FROM manufacturers
-//              WHERE manufacturerID = :product_id';
-//    $statement = $db->prepare($query);
-//    $statement->bindValue(":product_id", $product_id);
-//    $statement->execute();
-//    $product = $statement->fetch();
-//    $statement->closeCursor();
-//    return $product;
-//}
-
-
+// Get Manufacturers
 function get_manufacturers() {
     global $db;
     $query = 'SELECT * FROM manufacturers
@@ -35,7 +24,7 @@ function get_manufacturers() {
     return $statement; 
 }
 
-
+// Add Manufacturers
 function add_manufacturer($name, $site) {
     global $db;
     $query = 'INSERT INTO manufacturers
@@ -50,21 +39,33 @@ function add_manufacturer($name, $site) {
     $statement->execute();
     $statement->closeCursor();
 }
-// still not working
-function update_manufacturer($manufacturer_id, $name, $site) {
+
+// Delete Manufacturers
+function delete_manufacturer($manufacturer_id) {
     global $db;
-    $query = 'UPDATE manufacturers
-              SET manufacturerName = :name,
-                  manufacturerSite = :site
-                 
+    $query = 'DELETE FROM manufacturers
+              WHERE manufacturerID = :manufacturer_id';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':manufacturer_id', $manufacturer_id);
+    $statement->execute();
+    $statement->closeCursor();
+}
+
+// Edit Manufacturers
+function update_product($manufacturer, $name, $site) {
+    global $db;
+    $query = 'UPDATE bicycles
+              SET manufacturerID = :manufacturer_id,
+                  manufacturerName = :name,
+                  manufacturerSite = :site            
                WHERE manufacturerID = :manufacturer_id';
     $statement = $db->prepare($query);
     $statement->bindValue(':manufacturer_id', $manufacturer_id);
     $statement->bindValue(':name', $name);
     $statement->bindValue(':site', $site);
-
     $statement->execute();
     $statement->closeCursor();
 }
+
 ?>
 
