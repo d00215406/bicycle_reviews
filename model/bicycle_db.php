@@ -5,9 +5,9 @@ function get_products() {
               ORDER BY bicycleID';
     $statement = $db->prepare($query);
     $statement->execute();
-    $products = $statement->fetchAll();
+    $bicycles = $statement->fetchAll();
     $statement->closeCursor();
-    return $products;
+    return $bicycles;
 }
 
 function get_products_by_category($type_id) {
@@ -18,29 +18,29 @@ function get_products_by_category($type_id) {
     $statement = $db->prepare($query);
     $statement->bindValue(":category_id", $type_id);
     $statement->execute();
-    $products = $statement->fetchAll();
+    $bicycles = $statement->fetchAll();
     $statement->closeCursor();
-    return $products;
+    return $bicycles;
 }
 
-function get_product($product_id) {
+function get_product($bicycle_id) {
     global $db;
     $query = 'SELECT * FROM bicycles
               WHERE bicycleID = :product_id';
     $statement = $db->prepare($query);
-    $statement->bindValue(":product_id", $product_id);
+    $statement->bindValue(":product_id", $bicycle_id);
     $statement->execute();
-    $product = $statement->fetch();
+    $bicycle = $statement->fetch();
     $statement->closeCursor();
-    return $product;
+    return $bicycle;
 }
 
-function delete_product($product_id) {
+function delete_product($bicycle_id) {
     global $db;
     $query = 'DELETE FROM bicycles
               WHERE bicycleID = :product_id';
     $statement = $db->prepare($query);
-    $statement->bindValue(':product_id', $product_id);
+    $statement->bindValue(':product_id', $bicycle_id);
     $statement->execute();
     $statement->closeCursor();
 }
@@ -60,7 +60,7 @@ function add_product($type_id, $code, $name, $price) {
     $statement->closeCursor();
 }
 
-function update_product($product_id, $type_id, $code, $name, $price) {
+function update_product($bicycle_id, $type_id, $code, $name, $price) {
     global $db;
     $query = 'UPDATE bicycles
               SET typeID = :category_id,
@@ -73,7 +73,7 @@ function update_product($product_id, $type_id, $code, $name, $price) {
     $statement->bindValue(':code', $code);
     $statement->bindValue(':name', $name);
     $statement->bindValue(':price', $price);
-    $statement->bindValue(':product_id', $product_id);
+    $statement->bindValue(':product_id', $bicycle_id);
     $statement->execute();
     $statement->closeCursor();
 }

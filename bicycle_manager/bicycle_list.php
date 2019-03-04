@@ -20,27 +20,27 @@
                 <th>&nbsp;</th>
                 <th>&nbsp;</th>
             </tr>
-            <?php foreach ($products as $product) : ?>
+            <?php foreach ($bicycles as $bicycle) : ?>
             <tr>
-                <td><?php echo $product['bicycleCode']; ?></td>
-                <td><?php echo $product['bicycleName']; ?></td>
-                <td class="right"><?php echo $product['listPrice']; ?></td>
+                <td><?php echo $bicycle['bicycleCode']; ?></td>
+                <td><?php echo $bicycle['bicycleName']; ?></td>
+                <td class="right"><?php echo $bicycle['listPrice']; ?></td>
                 <td><form action="." method="post">
                     <input type="hidden" name="action"
                            value="show_edit_form">
                     <input type="hidden" name="product_id"
-                           value="<?php echo $product['bicycleID']; ?>">
+                           value="<?php echo $bicycle['bicycleID']; ?>">
                     <input type="hidden" name="category_id"
-                           value="<?php echo $product['typeID']; ?>">
+                           value="<?php echo $bicycle['typeID']; ?>">
                     <input type="submit" value="Edit">
                 </form></td>
                 <td><form action="." method="post">
                     <input type="hidden" name="action"
                            value="delete_product">
                     <input type="hidden" name="product_id"
-                           value="<?php echo $product['bicycleID']; ?>">
+                           value="<?php echo $bicycle['bicycleID']; ?>">
                     <input type="hidden" name="category_id"
-                           value="<?php echo $product['typeID']; ?>">
+                           value="<?php echo $bicycle['typeID']; ?>">
                     <input type="submit" value="Delete">
                 </form></td>
             </tr>

@@ -22,22 +22,22 @@ if ($action == 'list_products') {
     // Get product and category data
     $type_name = get_category_name($type_id);
     $types = get_categories();
-    $products = get_products_by_category($type_id);
+    $bicycles = get_products_by_category($type_id);
 
     // Display the product list
     include('bicycle_list.php');
 } else if ($action == 'show_edit_form') {
-    $product_id = filter_input(INPUT_POST, 'product_id', 
+    $bicycle_id = filter_input(INPUT_POST, 'product_id', 
             FILTER_VALIDATE_INT);
-    if ($product_id == NULL || $product_id == FALSE) {
+    if ($bicycle_id == NULL || $bicycle_id == FALSE) {
         $error = "Missing or incorrect product id.";
         include('../errors/error.php');
     } else { 
-        $product = get_product($product_id);
+        $bicycle = get_product($bicycle_id);
         include('bicycle_edit.php');
     }
 } else if ($action == 'update_product') {
-    $product_id = filter_input(INPUT_POST, 'product_id', 
+    $bicycle_id = filter_input(INPUT_POST, 'product_id', 
             FILTER_VALIDATE_INT);
     $type_id = filter_input(INPUT_POST, 'category_id', 
             FILTER_VALIDATE_INT);
@@ -46,28 +46,28 @@ if ($action == 'list_products') {
     $price = filter_input(INPUT_POST, 'price', FILTER_VALIDATE_FLOAT);
 
     // Validate the inputs
-    if ($product_id == NULL || $product_id == FALSE || $type_id == NULL || 
+    if ($bicycle_id == NULL || $bicycle_id == FALSE || $type_id == NULL || 
             $type_id == FALSE || $code == NULL || $name == NULL || 
             $price == NULL || $price == FALSE) {
         $error = "Invalid product data. Check all fields and try again.";
         include('../errors/error.php');
     } else {
-        update_product($product_id, $type_id, $code, $name, $price);
+        update_product($bicycle_id, $type_id, $code, $name, $price);
 
         // Display the Product List page for the current category
         header("Location: .?category_id=$type_id");
     }
 } else if ($action == 'delete_product') {
-    $product_id = filter_input(INPUT_POST, 'product_id', 
+    $bicycle_id = filter_input(INPUT_POST, 'product_id', 
             FILTER_VALIDATE_INT);
     $type_id = filter_input(INPUT_POST, 'category_id', 
             FILTER_VALIDATE_INT);
     if ($type_id == NULL || $type_id == FALSE ||
-            $product_id == NULL || $product_id == FALSE) {
+            $bicycle_id == NULL || $bicycle_id == FALSE) {
         $error = "Missing or incorrect product id or category id.";
         include('../errors/error.php');
     } else { 
-        delete_product($product_id);
+        delete_product($bicycle_id);
         header("Location: .?category_id=$type_id");
     }
 } else if ($action == 'show_add_form') {
