@@ -1,17 +1,17 @@
 # bicycle_reviews
 
-#Read me for a bicycle review PHP application 
-#© bicycle reviews 2019
+Read me for a bicycle review PHP application 
+© bicycle reviews 2019
 
-##Contributors Eryk Jagla <erykjagla4@gmail.com>
+Contributors Eryk Jagla <erykjagla4@gmail.com>
 
 - Last Update 3/3/2019
 
-##About
+- About
 
 This is an application that allows you to manage your bicycles using a MySql database and display them in the browser
 
-##Fully Working Features
+- Fully Working Features
 
 *Bicycles*
 
@@ -31,7 +31,7 @@ Delete type from the MySql database
 Display all Manufacturers from the MySql database
 Add a new manufacturer to the MySql database
 
-##Buggy/Incomplete Features
+- Buggy/Incomplete Features
 
 Delete manufacturers from the MySql database
 
