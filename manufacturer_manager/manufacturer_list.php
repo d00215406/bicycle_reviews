@@ -35,6 +35,7 @@
             <?php endforeach; ?>
         </table>
          <p><a href="?action=add_manufacturer">Add Manufacturer</a></p>
+         <p><a href="../bicycle_manager/">List Bicycle</a></p>
 
     </section>
 

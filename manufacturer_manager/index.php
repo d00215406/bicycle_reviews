@@ -47,7 +47,7 @@ if ($action == 'list_manufacturer') {
     }
  }
  
-   if ($action == 'delete_manufacturer') {
+else if ($action == 'delete_manufacturer') {
     $manufacturer_id = filter_input(INPUT_POST, 'manufacturer_id', 
             FILTER_VALIDATE_INT);
    }
