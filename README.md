@@ -9,7 +9,7 @@
 
 - About
 
-This is an application that allows you to manage your bicycles using a MySql database and display them in the browser using forms
+This is an application that allows you to manage your bicycles using a MySql database and display them in the browser using forms. This is done using the MVC framework
 
 ## Fully Working Features
 
