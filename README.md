@@ -3,7 +3,7 @@
 Read me for a bicycle review PHP application 
 © bicycle reviews 2019
 
-Contributors Eryk Jagla <erykjagla4@gmail.com>
+## Contributors Eryk Jagla <erykjagla4@gmail.com>
 
 - Last Update 3/3/2019
 
