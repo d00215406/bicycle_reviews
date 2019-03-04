@@ -1,11 +1,11 @@
 <?php include '../view/header.php'; ?>
 <main>
 
-    <h1>Product List</h1>
+    <h1>Bicycle List</h1>
 
     <aside>
         <!-- display a list of categories -->
-        <h2>Categories</h2>
+        <h2>Types</h2>
         <?php include '../view/category_nav.php'; ?>        
     </aside>
 
@@ -46,8 +46,8 @@
             </tr>
             <?php endforeach; ?>
         </table>
-        <p><a href="?action=show_add_form">Add Product</a></p>
-        <p><a href="?action=list_categories">List Categories</a></p>
+        <p><a href="?action=show_add_form">Add Bicycle</a></p>
+        <p><a href="?action=list_categories">List Types</a></p>
         <p><a href="../manufacturer_manager/">List Manufacturer</a></p>
         
     </section>
