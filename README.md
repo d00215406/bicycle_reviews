@@ -15,10 +15,10 @@ This is an application that allows you to manage your bicycles using a MySql dat
 
 *Bicycles*
 
-Display all bicycles from MySql database in a table
-Add bicycles to the MySql database
-Edit Bicycles in the MySql database
-Delete Bicycle from MySql database
+- Display all bicycles from MySql database in a table
+- Add bicycles to the MySql database
+- Edit Bicycles in the MySql database
+- Delete Bicycle from MySql database
 
 *Types*
 
