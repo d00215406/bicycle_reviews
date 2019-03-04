@@ -28,8 +28,8 @@ This is an application that allows you to manage your bicycles using a MySql dat
 
 *Manufacturers*
 
-Display all Manufacturers from the MySql database
-Add a new manufacturer to the MySql database
+- Display all Manufacturers from the MySql database
+- Add a new manufacturer to the MySql database
 
 ## Buggy/Incomplete Features
 
